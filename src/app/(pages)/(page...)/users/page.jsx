@@ -7,23 +7,57 @@ import Pagination from "@/app/components/pagination/Pagination";
 import { Suspense } from "react";
 import CircleLoading from "@/app/components/loading/CircleLoading";
 
-
-
 const users = [
-  { id: 1, name: "User 1", email: "email@email.com", phone: "1234567890", permission: 'admin' },
-  { id: 2, name: "User 2", email: "email@email.com"  , phone: "1234567890", permission: 'user' },
-  { id: 3, name: "User 3", email: "email@email.com", phone: "1234567890", permission: 'user' },
-  { id: 4, name: "User 4", email: "email@email.com", phone: "1234567890", permission: 'user' },
-  { id: 5, name: "User 5", email: "email@email.com", phone: "1234567890", permission: 'user' },
-  { id: 6, name: "User 6", email: "email@email.com", phone: "1234567890", permission: 'user' },
-  { id: 7, name: "User 7", email: "email@email.com", phone: "1234567890", permission: 'user' },
-
-
-
-
-
+  {
+    id: 1,
+    name: "User 1",
+    email: "email@email.com",
+    phone: "1234567890",
+    permission: "admin",
+  },
+  {
+    id: 2,
+    name: "User 2",
+    email: "email@email.com",
+    phone: "1234567890",
+    permission: "user",
+  },
+  {
+    id: 3,
+    name: "User 3",
+    email: "email@email.com",
+    phone: "1234567890",
+    permission: "user",
+  },
+  {
+    id: 4,
+    name: "User 4",
+    email: "email@email.com",
+    phone: "1234567890",
+    permission: "user",
+  },
+  {
+    id: 5,
+    name: "User 5",
+    email: "email@email.com",
+    phone: "1234567890",
+    permission: "user",
+  },
+  {
+    id: 6,
+    name: "User 6",
+    email: "email@email.com",
+    phone: "1234567890",
+    permission: "user",
+  },
+  {
+    id: 7,
+    name: "User 7",
+    email: "email@email.com",
+    phone: "1234567890",
+    permission: "user",
+  },
 ];
-
 
 function UsersList() {
   const searchParams = useSearchParams();
@@ -50,7 +84,7 @@ function UsersList() {
         </div>
       ) : (
         <div className="flex justify-center items-center h-screen">
-      <CircleLoading/>
+          <CircleLoading />
         </div>
       )}
       <Pagination
