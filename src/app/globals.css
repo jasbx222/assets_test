@@ -1,10 +1,6 @@
 @import "tailwindcss";
 
-:root {
-  --background: #fff;
-  --foreground: #171717;
-  color: rgb(165, 111, 10);
-}
+
 @keyframes border-spin {
   0% {
     background-position: 0% 50%;

@@ -4,7 +4,7 @@ export default function Page() {
 
 
   return (
-    <div dir="rtl" className="p-6 relative lg:right-24 md:right-0 sm:right-0 right-0 space-y-6 container w-full max-w-4xl mx-auto">
+    <div dir="rtl" className="p-6   space-y-6 container w-full max-w-4xl mx-auto">
       <h1 className="text-2xl    text-amber-50 w-[300px] font-bold mb-4">الإعدادات</h1>
 
       {/* معلومات الحساب */}
