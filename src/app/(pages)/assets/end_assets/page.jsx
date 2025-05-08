@@ -63,14 +63,14 @@ const DestroyAssetSection = ({ onStatusUpdated }) => {
     <div className="p-4 bg-gray-500   container w-[100%] rounded shadow-md  mx-auto space-y-4">
       <h2 className="text-lg font-semibold text-gray-200">إتلاف أصل</h2>
 
-      <div className=" w-[50%] mx-auto">
+      <div className=" w-[100%] mx-auto">
         <form className="flex items-center justify-center gap-2 w-full">
           <input
             type="text"
             value={assetId}
             onChange={(e) => setAssetId(e.target.value)}
             placeholder="أدخل رقم الأصل"
-            className="flex-1 w-full text-gray-950 px-3 bg-gray-200 h-[50px] py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+            className="flex-1 w-[100%] text-gray-950 px-3 bg-gray-200 h-[50px] py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200"
           />
           <button
             onClick={handleDestroy}
