@@ -25,7 +25,7 @@ const Sidebar = () => {
       </button>
 
       <div
-        className={`fixed border rounded-md border-gray-200 bg-[#424242] top-0 right-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform shadow-lg ${
+        className={`fixed border rounded-md border-gray-200 bg-[#1F3557] top-0 right-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform shadow-lg ${
           show ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -49,13 +49,8 @@ const Sidebar = () => {
               <Link
                 href={link.href}
                 className={`flex items-center justify-between gap-5 p-2 rounded-lg group
-    ${
-      path === link.href
-        ? "bg-gradient-to-r from-gray-950 via-gray-500 to-[#424242]"
-        : "bg-gradient-to-r from-gray-950 via-gray-500 to-[#424242]"
-    }
-    hover:from-[#424242] hover:via-gray-500 hover:to-gray-950
-    transition-colors duration-300 ease-in-out shadow shadow-[#fff]`}
+  
+    transition-colors duration-300 bg-[#1F3557] hover:bg-[#464f5ccb] ease-in-out shadow shadow-[#fff]`}
               >
                 <span className="w-5 h-5 text-gray-200">{link.icon}</span>
                 <span className="flex-1 text-gray-200">{link.label}</span>
@@ -68,7 +63,6 @@ const Sidebar = () => {
         </ul>
         {/* اللوغو والفوتر */}
 
-        <Logo />
       </div>
     </nav>
   );

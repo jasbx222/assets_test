@@ -1,69 +1,40 @@
 "use client";
-import { ShieldX } from "lucide-react";
-import axios from "axios";
+import { icons, SearchCheck, ShieldX } from "lucide-react";
 import { useState } from "react";
 import Swal from "sweetalert2";
-const DestroyAssetSection = ({ onStatusUpdated }) => {
-  const [assetId, setAssetId] = useState("");
+import Table from "./Table";
+
+const Page = () => {
+  const [assetId, setAssetId] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const handleDestroy = async () => {
-    if (!assetId.trim()) {
-      Swal.fire({
-        icon: "warning",
-        title: "تحذير",
-        timer: 5000,
-        text: "يرجى إدخال رقم الأصل.",
-        confirmButtonText: "حسناً",
-      });
+  const [asset, setAsset] = useState({
+    id: 1,
 
-      return;
-    }
+    name: "أصل 1",
+    category: "إلكترونيات",
+    status: "جيد",
+    createdAt: "2023-01-01",
+  });
 
-    const confirmed = Swal.fire({
-      title: "تأكيد",
-      text: "هل أنت متأكد من أنك تريد إتلاف هذا الأصل؟",
-      icon: "warning",
-      buttons: ["إلغاء", "نعم"],
-      dangerMode: true,
+  const handleDestroy = (e) => {
+    e.preventDefault();
+
+    Swal.fire({
+      title: "Auto close alert!",
+      text: "I will close in 2 seconds.",
+
+      timer: 5000,
+      buttonsStyling: "yes",
     });
-    if (!confirmed) return;
-
-    try {
-      setLoading(true);
-      const response = await axios.put(`/api/assets/${assetId}`, {
-        status: "تالف",
-      });
-
-      if (response.status === 200) {
-        Swal.fire({
-          icon: "success",
-          title: "نجاح",
-          text: "تم إتلاف الأصل بنجاح.",
-          confirmButtonText: "حسناً",
-        });
-
-        onStatusUpdated?.();
-        setAssetId(""); // إعادة تعيين الحقل بعد الإتلاف
-      }
-    } catch (error) {
-      console.error("فشل في إتلاف الأصل:", error);
-      Swal.fire({
-        icon: "error",
-        title: "فشل",
-        text: "حدث خطأ أثناء إتلاف الأصل. يرجى المحاولة مرة أخرى.",
-        confirmButtonText: "حسناً",
-      });
-    } finally {
-      setLoading(false);
-    }
+    setLoading(true);
   };
 
   return (
-    <div className="p-4 bg-gray-500   container w-[100%] rounded shadow-md  mx-auto space-y-4">
+    <div className="p-4 bg-[#1F3557] container w-[100%] rounded shadow-md mx-auto space-y-4">
       <h2 className="text-lg font-semibold text-gray-200">إتلاف أصل</h2>
 
-      <div className=" w-[100%] mx-auto">
+      <div className="w-[100%] mx-auto">
         <form className="flex items-center justify-center gap-2 w-full">
           <input
             type="text"
@@ -81,10 +52,21 @@ const DestroyAssetSection = ({ onStatusUpdated }) => {
           >
             {loading ? "جاري الإتلاف..." : <ShieldX size={20} />}
           </button>
+          <button
+            onClick={handleDestroy}
+            disabled={loading}
+            className={`flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-red-500 ${
+              loading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+          >
+            {loading ? "البحث الإتلاف..." : <SearchCheck size={20} />}
+          </button>
         </form>
       </div>
+
+      <Table asset={asset} />
     </div>
   );
 };
 
-export default DestroyAssetSection;
+export default Page;

@@ -3,7 +3,7 @@ import { Pencil, Trash2 } from "lucide-react";
 const TableCategories = ({ categories }) => {
   return (
     <table className="w-full overflow-auto  text-sm text-right text-gray-700">
-      <thead className="bg-gray-800 text-white">
+      <thead className="bg-[#1F3557] text-white">
         <tr>
           <th className="px-6 py-3">#</th>
           <th className="px-6 py-3">اسم الفئة</th>
@@ -41,7 +41,7 @@ const TableCategories = ({ categories }) => {
           </tr>
         )}
       </tbody>
-      <tfoot className="bg-gray-800 text-white">
+      <tfoot className="bg-[#1F3557] text-white">
         <tr>
           <td colSpan={3} className="px-6 py-3 text-center ">
             إجمالي الفئات:{" "}

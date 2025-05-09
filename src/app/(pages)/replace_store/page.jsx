@@ -85,7 +85,7 @@ export default function Page() {
           </select>
         </div>
 
-        <button type="submit" className="w-full bg-[#34393d] text-gray-200 hover:text-amber-50 py-2 rounded hover:bg-gray-700">
+        <button type="submit" className="w-full bg-[#262D60] text-gray-200 hover:text-amber-50 py-2 rounded hover:bg-gray-700">
           تنفيذ النقل
         </button>
       </form>
